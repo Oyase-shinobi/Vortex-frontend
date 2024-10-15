@@ -1,0 +1,192 @@
+@import 'src/styles/config';
+
+.disclaimer-modal {
+  @include column;
+  position: relative;
+  width: 72rem;
+  height: 55.6rem;
+  background: $color-black01;
+  border: 1px solid $color-white;
+  border-radius: $border-radius-large;
+  box-sizing: border-box;
+  padding: 6.4rem 6rem 3.6rem;
+  color: $color-white;
+  font-size: 2rem;
+  gap: 4rem;
+
+  .modal-title {
+    font-size: 7rem;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+  }
+
+  .modal-description {
+    line-height: 2.8rem;
+
+    .green {
+      color: $color-green01;
+    }
+  }
+
+  .action-row {
+    @include row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .dont-show-row {
+      @include row;
+      align-items: center;
+      gap: 1.8rem;
+
+      .dont-show-checkbox {
+        @include checkbox;
+
+        &.checked {
+          background: $color-white01;
+
+          .check-icon {
+            width: 2.4rem;
+            height: auto;
+            object-fit: contain;
+            margin-top: 0.3rem;
+          }
+        }
+      }
+
+      .dont-show-text {
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    .logo {
+      width: 12rem;
+      height: 12rem;
+      object-fit: contain;
+    }
+  }
+
+  .button-row {
+    @include row;
+    align-items: center;
+    gap: 4rem;
+    font-weight: $font-weight-bold;
+
+    .rule-button {
+      @include center-item;
+      @include box-shadow-normal($color-blue01);
+      width: 28rem;
+      height: 6rem;
+      border-radius: $border-radius-default;
+      background: $color-black01;
+    }
+
+    .play-button {
+      @include center-item;
+      @include box-shadow-normal($color-blue01);
+      width: 28rem;
+      height: 6rem;
+      border-radius: $border-radius-default;
+      background: $color-blue01;
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 4rem;
+    right: 3.6rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    margin-top: 0.6rem;
+
+    .close-icon {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
+
+.window-small {
+  .disclaimer-modal {
+    width: 35rem;
+    height: 36.2rem;
+    border-radius: $border-radius-middle;
+    padding: 2.4rem 1.6rem 3.2rem;
+    font-size: 1.4rem;
+    gap: 2.4rem;
+
+    .modal-title {
+      padding: 0 0.8rem;
+      font-size: 4rem;
+    }
+
+    .modal-description {
+      line-height: 2rem;
+      padding: 0 0.8rem;
+
+      .green {
+      }
+    }
+
+    .action-row {
+      padding: 0 0.8rem;
+
+      .dont-show-row {
+        gap: 1.2rem;
+
+        .dont-show-checkbox {
+          width: 2rem;
+          height: 2rem;
+
+          &.checked {
+            .check-icon {
+              width: 2rem;
+              margin-top: 0.2rem;
+            }
+          }
+        }
+
+        .dont-show-text {
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      .logo {
+        width: 6rem;
+        height: 6rem;
+        margin-top: 2rem;
+      }
+    }
+
+    .button-row {
+      gap: 1rem;
+
+      .rule-button {
+        width: 15.4rem;
+        height: 3.6rem;
+        border-radius: $border-radius-small;
+        font-size: 1.4rem;
+      }
+
+      .play-button {
+        width: 15.4rem;
+        height: 3.6rem;
+        border-radius: $border-radius-small;
+        font-size: 1.4rem;
+      }
+    }
+
+    .close-button {
+      top: 2.8rem;
+      right: 1.9rem;
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-top: 0;
+
+      .close-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+  }
+}

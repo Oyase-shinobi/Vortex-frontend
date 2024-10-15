@@ -1,0 +1,21 @@
+@import 'src/styles/config';
+
+.spinner-background {
+  position: absolute;
+  max-width: 97.4rem;
+  height: 100%;
+  object-fit: contain;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.window-small {
+  .spinner-background {
+    position: fixed;
+    max-width: initial;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  spin-game-frontend:
+    container_name: spin-game-frontend
+    image: brighter/spin-game-frontend:dev
+    build:
+      context: ../.
+      dockerfile: develop/Dockerfile
+    volumes:
+      - ../.:/srv/spin-game-frontend
+      - /tmp/spin-game-frontend/develop/node_modules:/srv/spin-game-frontend/node_modules
+      - /srv/spin-game-frontend/.next
+      - /srv/spin-game-frontend/build
+    ports:
+      - '8888:3000'
+    env_file:
+      - ../.env.development
+    restart: always
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: 10m
+        max-file: '5'

@@ -1,0 +1,154 @@
+@import 'src/styles/config';
+
+.header-mobile {
+  @include column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: fit-content;
+  box-sizing: border-box;
+  z-index: 2;
+  color: $color-white01;
+  gap: 0;
+
+  .top-section {
+    @include row;
+    align-items: center;
+    padding: 1.1rem 2rem;
+    gap: 2.4rem;
+    background-color: color-with-opacity($color-dark-blue01, 0.8);
+    backdrop-filter: blur(1rem);
+    height: fit-content;
+
+    .logo {
+      @include row;
+      gap: 0.8rem;
+      text-decoration: none;
+
+      .logo-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        object-fit: contain;
+      }
+
+      .logo-text {
+        font-size: 2rem;
+        font-weight: $font-weight-bold;
+        color: $color-white01;
+      }
+    }
+
+    .connect-wallet-container {
+      margin-left: auto;
+    }
+
+    .icon-container {
+      .icon {
+        width: 1.6rem;
+        height: 1.6rem;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .header-content {
+    @include column;
+    gap: 2.4rem;
+    align-items: center;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 2.5rem 0 3.2rem;
+    background-color: color-with-opacity($color-dark-blue01, 0.8);
+    backdrop-filter: blur(1rem);
+
+    .nav-list {
+      @include column;
+      align-items: center;
+      font-size: 1.4rem;
+      margin: 0;
+      gap: 2.4rem;
+      font-weight: $font-weight-bold;
+
+      .nav-item {
+        position: relative;
+        width: fit-content;
+        font-size: 1.4rem;
+        text-align: center;
+        text-decoration: none;
+        color: $color-white;
+
+        &:hover {
+          color: $color-blue01;
+        }
+
+        .export-icon {
+          position: absolute;
+          width: 1.2rem;
+          height: 1.2rem;
+          left: 6rem;
+          top: 0.2rem;
+        }
+      }
+    }
+
+    .disconnect-button {
+      width: fit-content;
+      font-size: 1.4rem;
+      text-align: center;
+      text-decoration: none;
+      color: $color-white;
+      font-weight: $font-weight-bold;
+
+      &:hover {
+        color: $color-blue01;
+      }
+    }
+
+    .social-list {
+      @include row;
+      gap: 6rem;
+      font-size: 1.4rem;
+      margin: 1.2rem 0 0;
+
+      .social-icon {
+        width: auto;
+        height: 2rem;
+        object-fit: contain;
+
+        .social-icon-normal {
+          display: initial;
+          width: auto;
+          height: 2rem;
+        }
+
+        .social-icon-hover {
+          display: none;
+          width: auto;
+          height: 2rem;
+        }
+
+        &:hover {
+          .social-icon-normal {
+            display: none;
+          }
+
+          .social-icon-hover {
+            display: initial;
+          }
+        }
+      }
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: color-with-opacity($color-black, 0.6);
+    backdrop-filter: blur(1rem);
+    z-index: -1;
+  }
+}

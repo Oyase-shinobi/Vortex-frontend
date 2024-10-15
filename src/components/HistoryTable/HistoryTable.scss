@@ -1,0 +1,16 @@
+@import 'src/styles/config';
+
+.history-table {
+  .tabs {
+    @include row;
+    gap: 2rem;
+  }
+}
+
+.window-small {
+  .history-table {
+    .tabs {
+      gap: 0.8rem;
+    }
+  }
+}

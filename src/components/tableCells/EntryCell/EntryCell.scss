@@ -1,0 +1,32 @@
+@import 'src/styles/config';
+
+.entry-cell {
+  @include row;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 2rem;
+  font-weight: $font-weight-bold;
+  line-height: 2.8rem;
+  color: $color-white;
+  white-space: pre-wrap;
+  text-align: left;
+
+  .tt-icon {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+  }
+}
+
+.window-small {
+  .entry-cell {
+    gap: 0.4rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+
+    .tt-icon {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+}

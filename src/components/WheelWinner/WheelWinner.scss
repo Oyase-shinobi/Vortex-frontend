@@ -1,0 +1,106 @@
+@import 'src/styles/config';
+
+.wheel-winner {
+  @include column;
+  position: relative;
+  align-items: center;
+  gap: 0.2rem;
+  width: 42rem;
+  height: 42rem;
+  border-radius: 42rem;
+  box-sizing: border-box;
+  background: $color-black-80-percent;
+  backdrop-filter: blur(10px);
+  padding: 7.3rem 0;
+  color: $color-white01;
+
+  .winner-icon {
+    width: 10.7656rem;
+    height: 10rem;
+  }
+
+  .winner-title {
+    @include center-item;
+    font-size: 2.6rem;
+    font-weight: $font-weight-bold;
+    height: 3.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .winner-address {
+    @include center-item;
+    height: 3.8rem;
+    font-size: 3.2rem;
+    text-align: center;
+  }
+
+  .win-multiplier-section {
+    @include row;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.2rem;
+
+    .thunder-icon {
+      width: 3.6rem;
+      height: 4.824rem;
+      object-fit: contain;
+    }
+
+    .multiplier-text {
+      font-size: 7rem;
+      font-weight: $font-weight-bold;
+      line-height: 1;
+      text-shadow: 0 0 8px $color-black02;
+    }
+  }
+
+  .celebration-animation-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.window-small {
+  .wheel-winner {
+    @include center-item;
+    gap: 0.2rem;
+    min-width: 18rem;
+    min-height: 18rem;
+    padding: 1.4rem 0 3rem;
+
+    //.winner-icon {
+    //  width: 5.3828rem;
+    //  height: 5rem;
+    //}
+    //
+    //.winner-title {
+    //  font-size: 1.4rem;
+    //  height: 1.6rem;
+    //  margin-top: 0.4rem;
+    //}
+    //
+    //.winner-address {
+    //  height: 2rem;
+    //  font-size: 2rem;
+    //}
+    //
+    //.win-multiplier-section {
+    //  gap: 0.4rem;
+    //  margin-top: 0.2rem;
+    //
+    //  .thunder-icon {
+    //    width: 2.4rem;
+    //    height: 3.216rem;
+    //  }
+    //
+    //  .multiplier-text {
+    //    font-size: 4rem;
+    //  }
+    //}
+
+    .celebration-animation-container {
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import 'src/styles/config';
+
+.verify-cell {
+  .verify-icon {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+  }
+}
+
+.window-small {
+  .verify-cell {
+    .verify-icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

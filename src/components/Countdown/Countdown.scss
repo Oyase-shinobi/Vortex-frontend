@@ -1,0 +1,67 @@
+@import 'src/styles/config';
+
+.countdown {
+  @include row;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 4rem;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  color: $color-white;
+
+  .countdown-icon {
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+    margin-right: 0.3rem;
+  }
+
+  .time-block {
+    @include center-item;
+    @include box-shadow-normal($color-blue01);
+    width: 8rem;
+    height: 8rem;
+    border-radius: $border-radius-default;
+    background-color: $color-black01;
+    box-sizing: border-box;
+  }
+
+  .time-block-middle {
+    @include center-item;
+    width: 1.4rem;
+  }
+
+  &.complete {
+    .countdown-icon {
+      opacity: 0;
+    }
+
+    .time-block {
+      color: color-with-opacity($color-white01, 0.3);
+    }
+  }
+}
+
+.window-small {
+  .countdown {
+    gap: 0.2rem;
+    font-size: 2rem;
+
+    .countdown-icon {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 0;
+    }
+
+    .time-block {
+      width: 3.6rem;
+      height: 3.6rem;
+      border-radius: 0.4rem;
+    }
+
+    .time-block-middle {
+      width: 0.6rem;
+      margin: 0 0.2rem;
+    }
+  }
+}

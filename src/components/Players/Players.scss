@@ -1,0 +1,28 @@
+@import 'src/styles/config';
+
+.players {
+  @include row;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2.6rem;
+  font-weight: $font-weight-bold;
+  color: $color-white01;
+
+  .players-icon {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+  }
+}
+
+.window-small {
+  .players {
+    gap: 0.4rem;
+    font-size: 1.4rem;
+
+    .players-icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

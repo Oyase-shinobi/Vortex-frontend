@@ -1,0 +1,14 @@
+@import 'src/styles/config';
+
+.drawing-animation {
+  width: 38.6rem;
+  height: 50.2rem;
+  object-fit: contain;
+}
+
+.window-small {
+  .drawing-animation {
+    width: 100%;
+    height: 100%;
+  }
+}

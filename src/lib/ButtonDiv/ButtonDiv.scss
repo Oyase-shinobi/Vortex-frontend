@@ -1,0 +1,14 @@
+@import 'src/styles/config';
+
+.button-div {
+  @include no-select;
+  display: flex;
+  cursor: pointer;
+
+  &.disabled {
+    @include disabled;
+  }
+}
+
+.window-small {
+}

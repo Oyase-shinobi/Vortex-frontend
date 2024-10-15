@@ -1,0 +1,35 @@
+@import 'src/styles/config';
+
+.round {
+  @include row;
+  color: $color-white01;
+  font-size: 2.6rem;
+  font-weight: $font-weight-bold;
+  gap: 1.2rem;
+  line-height: 3.4rem;
+  white-space: nowrap;
+  margin-right: auto;
+
+  .round-icon {
+    width: 3rem;
+    height: auto;
+    margin: 2px 0 8.22px;
+  }
+}
+
+.window-small {
+  .round {
+    font-size: 1.4rem;
+    gap: 0.4rem;
+    line-height: 2rem;
+    white-space: pre-wrap;
+    word-break: auto-phrase;
+    align-items: center;
+
+    .round-icon {
+      width: 2rem;
+      height: auto;
+      margin: 5px 0 6.5px;
+    }
+  }
+}

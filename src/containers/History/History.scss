@@ -1,0 +1,31 @@
+@import 'src/styles/config';
+
+.history {
+  @include column;
+  gap: 2.4rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 10.4rem 13rem 4rem;
+  background: $color-black01;
+
+  .winnings-and-achievement {
+    @include row;
+    flex-wrap: wrap-reverse;
+    row-gap: 2rem;
+    column-gap: 6rem;
+  }
+}
+
+.window-small {
+  .history {
+    gap: 3.5rem;
+    padding: 6.6rem 1.2rem 3rem;
+    background: $color-black01;
+    width: 100vw;
+
+    .winnings-and-achievement {
+      @include column;
+      gap: 2rem;
+    }
+  }
+}

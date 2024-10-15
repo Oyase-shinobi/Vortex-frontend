@@ -1,0 +1,115 @@
+@import 'src/styles/config';
+
+.table {
+  @include scrollbar;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2.4rem;
+  background: $color-black02;
+  border-radius: 0 $border-radius-default $border-radius-default
+    $border-radius-default;
+  overflow: scroll;
+
+  table {
+    width: 100%;
+    padding: 2.4rem;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border-style: hidden;
+    color: $color-white;
+    font-weight: $font-weight-bold;
+    font-size: 2rem;
+    background: $color-black02;
+
+    thead {
+      height: 4rem;
+      line-height: 2.8rem;
+
+      th {
+        text-align: left;
+        padding-right: 2.8rem;
+
+        &:first-child {
+          padding-left: 2.8rem;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        @include outline-none;
+        text-align: left;
+        border-bottom: 1px solid color-with-opacity($color-white, 0.3);
+      }
+
+      td {
+        position: relative;
+        min-width: 5.6rem;
+        padding-top: 2.8rem;
+        padding-right: 2.8rem;
+        padding-bottom: 2.8rem;
+        white-space: nowrap;
+
+        &:first-child {
+          padding-left: 2.8rem;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.window-small {
+  .table {
+    padding: 0.8em;
+
+    table {
+      font-size: 1.2rem;
+
+      thead {
+        height: 4rem;
+        line-height: 2.8rem;
+
+        th {
+          text-align: left;
+          padding-right: 1.2rem;
+
+          &:first-child {
+            padding-left: 1.2rem;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+        }
+
+        td {
+          min-width: 5rem;
+          padding-top: 1.2rem;
+          padding-right: 2rem;
+          padding-bottom: 1.2rem;
+
+          &:first-child {
+            padding-left: 1.2rem;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

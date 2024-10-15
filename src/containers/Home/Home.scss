@@ -1,0 +1,75 @@
+@import 'src/styles/config';
+
+.home {
+  @include row;
+  position: relative;
+  gap: min(10vw, 19.2rem);
+  width: 100vw;
+  max-width: 192rem;
+  min-height: 100vh;
+  padding: 10.4rem 12rem 0 10.6rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  &::before {
+    position: fixed;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: $color-blue-black-gradient;
+    z-index: -1;
+  }
+
+  &.entry {
+    &::before {
+      background: $color-green-black-gradient;
+    }
+  }
+
+  .spinner-section {
+    @include column;
+    margin-top: 5rem;
+    z-index: 1;
+    flex: 1;
+  }
+
+  .info-section {
+    @include column;
+    gap: 4rem;
+    margin-left: auto;
+    width: fit-content;
+    flex: 1;
+  }
+}
+
+.window-small {
+  .home {
+    @include column;
+    gap: 1.6rem;
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    padding: 6rem 1.6rem 2.7rem 1.6rem;
+    overflow-x: hidden;
+
+    .spinner-section {
+      margin-top: 0;
+      flex: none;
+    }
+
+    .info-section {
+      gap: 1.2rem;
+      margin: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &.entry {
+      &::before {
+        background: $color-blue-black-gradient;
+      }
+    }
+  }
+}

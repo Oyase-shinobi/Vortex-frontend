@@ -1,0 +1,28 @@
+@import 'src/styles/config';
+
+.watching {
+  @include row;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2.6rem;
+  font-weight: $font-weight-bold;
+  color: $color-white01;
+
+  .watching-icon {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+  }
+}
+
+.window-small {
+  .watching {
+    gap: 0.4rem;
+    font-size: 1.4rem;
+
+    .watching-icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

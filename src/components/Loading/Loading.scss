@@ -1,0 +1,28 @@
+@import 'src/styles/config';
+
+.loading {
+  @include center-item;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(0.6rem);
+  background: $color-black-60-percent;
+  z-index: 1000;
+
+  .loading-icon {
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+  }
+}
+
+.window-small {
+  .loading {
+    .loading-icon {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+}

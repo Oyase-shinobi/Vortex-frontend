@@ -1,0 +1,50 @@
+@import 'src/styles/config';
+
+.player-panel {
+  @include column;
+  gap: 1.6rem;
+  max-width: 75.2rem;
+  width: 100%;
+  flex: 1;
+
+  .player-and-watching {
+    @include row;
+    justify-content: space-between;
+    padding: 0 3rem;
+  }
+
+  .status-bar-list {
+    @include column;
+    @include scrollbar;
+    gap: 2.4rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 59.6rem;
+    padding: 0.8rem;
+    margin: -0.8rem;
+
+    flex: 1;
+  }
+}
+
+.window-small {
+  .player-panel {
+    gap: 1.1rem;
+    width: 100%;
+    max-width: initial;
+    margin-top: 3.2rem;
+
+    &.extra-space {
+      margin-bottom: 20rem;
+    }
+
+    .player-and-watching {
+      padding: 0 1.2rem;
+    }
+
+    .status-bar-list {
+      gap: 0.8rem;
+      max-height: 28.2rem;
+    }
+  }
+}

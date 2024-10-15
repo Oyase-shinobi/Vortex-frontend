@@ -1,0 +1,10 @@
+.idea
+node_modules
+next-env.d.ts
+
+next.config.js
+
+tsconfig.json
+.eslintrc.json
+
+/src/typechain

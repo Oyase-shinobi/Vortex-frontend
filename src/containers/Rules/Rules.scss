@@ -1,0 +1,167 @@
+@import 'src/styles/config';
+
+.rules {
+  @include column;
+  gap: 6rem;
+  padding: 16.3rem 13rem 10rem;
+  background: $color-black01;
+  box-sizing: border-box;
+  min-height: 100vh;
+  color: $color-white01;
+  font-weight: $font-weight-normal;
+
+  .title-section {
+    @include row;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      font-size: 7rem;
+      font-weight: $font-weight-bold;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .spin-button {
+      @include button($color-blue01);
+      width: 24rem;
+      height: 6rem;
+    }
+  }
+
+  .description-section {
+    @include row;
+    gap: 6rem;
+
+    .description-block {
+      @include column;
+      gap: 4rem;
+      background: $color-black02;
+      width: 80rem;
+      min-height: 69.6rem;
+      height: fit-content;
+      padding: 4rem;
+      box-sizing: border-box;
+      border-radius: $border-radius-default;
+
+      .description-title {
+        font-size: 4rem;
+        font-weight: $font-weight-bold;
+        color: $color-green01;
+      }
+
+      .description-content {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+        white-space: pre-wrap;
+      }
+
+      .description-tt {
+        width: 20rem;
+        height: 20rem;
+        object-fit: contain;
+        margin-left: auto;
+      }
+
+      .description-icon-list {
+        margin: 2rem auto 0;
+      }
+    }
+
+    .faq-block {
+      @include column;
+      gap: 3.2rem;
+      background: $color-black02;
+      width: 80rem;
+      min-height: 69.6rem;
+      padding: 4rem;
+      box-sizing: border-box;
+      border-radius: $border-radius-default;
+
+      .title {
+        font-size: 4rem;
+        font-weight: $font-weight-bold;
+      }
+
+      .faq-list {
+        @include column;
+        gap: 2.4rem;
+      }
+    }
+  }
+}
+
+.window-small {
+  .rules {
+    gap: 3.2rem;
+    padding: 7rem 1.8rem 3.2rem;
+
+    .title-section {
+      @include column;
+      justify-content: center;
+      gap: 3.2rem;
+
+      .title {
+        font-size: 4rem;
+      }
+
+      .spin-button {
+        width: 15.4rem;
+        height: 3.6rem;
+        border-radius: $border-radius-small;
+        font-size: 1.4rem;
+      }
+    }
+
+    .description-section {
+      @include column;
+      gap: 1.2rem;
+
+      .description-block {
+        @include column;
+        gap: 2rem;
+        width: auto;
+        min-height: 0;
+        padding: 2rem 1.6rem;
+
+        .description-title {
+          font-size: 2rem;
+        }
+
+        .description-content {
+          font-size: 1.4rem;
+          line-height: 2rem;
+          white-space: pre-wrap;
+        }
+
+        .description-tt {
+          width: 10rem;
+          height: 10rem;
+          margin: 0 auto;
+        }
+
+        .description-icon-list {
+          margin: 0.4rem auto 0;
+          width: 100%;
+          max-width: 32.5rem;
+        }
+      }
+
+      .faq-block {
+        gap: 1.6rem;
+        width: auto;
+        min-height: 0;
+        padding: 2rem 1.6rem;
+
+        .title {
+          font-size: 2rem;
+        }
+
+        .faq-list {
+          @include column;
+          gap: 1.2rem;
+        }
+      }
+    }
+  }
+}

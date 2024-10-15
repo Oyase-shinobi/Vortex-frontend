@@ -1,0 +1,59 @@
+@import 'src/styles/config';
+
+html {
+  @include font-play;
+  font-size: 10px;
+  font-weight: $font-weight-normal;
+  background: $color-black01;
+  color: $color-white;
+}
+
+body {
+  margin: 0;
+  overflow: auto !important;
+}
+
+main {
+  @include column;
+  position: relative;
+  min-height: 100vh;
+  min-width: 36rem;
+}
+
+.app-container {
+  min-height: 100vh;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+img {
+  @include no-select;
+  pointer-events: none;
+  touch-action: none;
+}
+
+.notistack-MuiContent {
+  @include font-play;
+  font-size: $font-size-14 !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.window-small {
+  .app-container {
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,116 @@
+@import 'src/styles/config';
+
+.welcome {
+  @include center-item;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: $color-black-60-percent;
+  color: $color-white01;
+  backdrop-filter: blur(0.6rem);
+
+  .welcome-gif {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .welcome-content {
+    @include column;
+    align-items: center;
+    text-align: center;
+
+    .logo {
+      width: 12rem;
+      height: 12rem;
+      object-fit: contain;
+      margin-bottom: 2.8rem;
+    }
+
+    .title {
+      font-size: 7rem;
+      font-weight: $font-weight-bold;
+      margin-bottom: 2rem;
+      line-height: 1;
+    }
+
+    .sub-title {
+      font-size: 3.2rem;
+      font-weight: $font-weight-normal;
+      margin-bottom: 6rem;
+      line-height: 1;
+    }
+
+    .play-button {
+      @include button($color-blue01);
+      @include center-item;
+      width: 28rem;
+      height: 6rem;
+      font-size: 2rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .start-game-count {
+      color: $color-blue01;
+      font-size: 2rem;
+      font-weight: $font-weight-normal;
+      line-height: 2.8rem;
+    }
+  }
+
+  &.fade {
+    animation: fade-out 1s linear;
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+.window-small {
+  .welcome {
+    .welcome-gif {
+      width: auto;
+    }
+
+    .welcome-content {
+      .logo {
+        width: 6rem;
+        height: 6rem;
+        margin-bottom: 1.6rem;
+      }
+
+      .title {
+        font-size: 4rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .sub-title {
+        font-size: 2rem;
+        margin-bottom: 2.4rem;
+      }
+
+      .play-button {
+        width: 20rem;
+        height: 4rem;
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .start-game-count {
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+    }
+  }
+}

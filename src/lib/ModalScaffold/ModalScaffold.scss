@@ -1,0 +1,32 @@
+@import 'src/styles/config';
+
+.modal-scaffold {
+  @include center-item;
+  @include fade-in-animation;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+
+  .modal-content {
+    z-index: 101;
+  }
+
+  .backdrop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: color-with-opacity($color-black01, 0.5);
+    backdrop-filter: blur(0.6rem);
+    z-index: 99;
+    top: 0;
+    left: 0;
+    cursor: initial;
+  }
+}
+
+.window-small {
+}

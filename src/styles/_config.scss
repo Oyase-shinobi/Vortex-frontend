@@ -1,0 +1,246 @@
+$color-black: black;
+$color-black-60-percent: rgba(1, 1, 7, 0.6);
+$color-black-80-percent: rgba(1, 1, 7, 0.8);
+$color-white: white;
+$color-white-50-percent: rgba(255, 255, 255, 0.5);
+$color-white-20-percent: rgba(255, 255, 255, 0.2);
+
+$color-black01: #121319;
+$color-black02: #060607;
+
+$color-white01: #fbfbfb;
+
+$color-blue01: #57c0a6;
+$color-blue02: #bfdbfe;
+$color-dark-blue01: #010107;
+
+$color-green01: #d97957;
+
+$color-grey: #1a1a1a;
+$color-grey-light: #b3b3b3;
+$color-grey-mid: #333333;
+
+$color-grey-disabled-text: #666666;
+$color-grey-disabled-bg: #f2f2f2;
+
+$color-error: #ed0000;
+
+$color-modal-dim: rgba(80, 80, 80, 0.45);
+
+$color-blue-black-gradient: linear-gradient(180deg, #2e6155 0%, #121319 70%);
+$color-green-black-gradient: linear-gradient(180deg, #d97957 0%, #121319 70%);
+
+$font-size-desktop-heading-1: 5.2rem;
+$font-size-desktop-heading-2: 4.4rem;
+$font-size-desktop-paragraph: 1.6rem;
+
+$font-size-mobile-heading-1: 2.8rem;
+$font-size-mobile-paragraph-1: 1.6rem;
+$font-size-mobile-paragraph-2: 1.4rem;
+
+$font-size-36: 3.6rem;
+$font-size-28: 2.8rem;
+$font-size-24: 2.4rem;
+$font-size-20: 2rem;
+$font-size-16: 1.6rem;
+$font-size-14: 1.4rem;
+$font-size-12: 1.2rem;
+$font-size-10: 1rem;
+
+$opacity-disable: 0.5;
+$opacity-hover: 0.7;
+
+$border-radius-default: 1.2rem;
+$border-radius-large: 2.4rem;
+$border-radius-middle: 1.6rem;
+$border-radius-small: 0.8rem;
+
+$border-radius-mobile-default: 2.4rem;
+$border-radius-mobile-large: 3.2rem;
+
+$box-shadow-default: 0.5rem 0.5rem 1rem 0 rgba(91, 91, 91, 0.5);
+$box-shadow-container: 0 2px 4px rgba(0, 0, 0, 0.15);
+$box-shadow-reverse-container: 0 -2px -4px rgba(0, 0, 0, 0.15);
+$box-shadow-button: 0 2px 4px rgba(0, 0, 0, 0.15);
+$box-shadow-main-menu: 10 0 25px 3px rgba(50, 50, 50, 0.6);
+
+$text-shadow-default: 2px 2px 6px rgba(0, 0, 0, 0.25);
+
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$content-max-width: 130rem;
+
+@mixin font-play {
+  font-family: 'Play', sans-serif;
+}
+
+@mixin font-play-regular {
+  @include font-play;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin font-play-bold {
+  @include font-play;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin desktop-heading-1 {
+  font-size: $font-size-desktop-heading-1;
+  font-weight: $font-weight-bold;
+  line-height: 7rem;
+}
+
+@mixin desktop-heading-2 {
+  font-size: $font-size-desktop-heading-2;
+  font-weight: $font-weight-bold;
+  line-height: 6.2rem;
+}
+
+@mixin desktop-paragraph {
+  font-size: $font-size-desktop-paragraph;
+  line-height: 2.4rem;
+}
+
+@mixin mobile-heading-1 {
+  font-size: $font-size-mobile-heading-1;
+  font-weight: $font-weight-bold;
+  line-height: normal;
+}
+
+@mixin mobile-paragraph-1 {
+  font-size: $font-size-mobile-paragraph-1;
+  line-height: 2.4rem;
+}
+
+@mixin mobile-paragraph-2 {
+  font-size: $font-size-mobile-paragraph-2;
+  line-height: 2rem;
+}
+
+@mixin text-28 {
+  font-size: $font-size-28;
+  font-weight: $font-weight-bold;
+  line-height: normal;
+}
+
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin center-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin outline-none() {
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin disabled() {
+  pointer-events: none;
+  touch-action: none;
+  cursor: pointer;
+}
+
+@mixin uppercase() {
+  text-transform: uppercase;
+}
+
+@mixin base-button() {
+  @include center-item;
+  @include outline-none;
+  text-align: center;
+  font-size: $font-size-20;
+  font-weight: $font-weight-bold;
+  border-radius: $border-radius-default;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: $color-white01;
+}
+
+@mixin button($color) {
+  @include base-button;
+  @include box-shadow-normal($color);
+  background-color: $color;
+  text-decoration: none;
+
+  &:hover {
+    color: $color;
+    background-color: $color-white01;
+  }
+
+  &.disabled {
+    opacity: 40%;
+  }
+}
+
+@mixin checkbox() {
+  @include center-item;
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 2px solid $color-white01;
+}
+
+@mixin no-select() {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  user-drag: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+@mixin scrollbar() {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 1rem;
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0 0 0.1rem rgba(255, 255, 255, 0.5);
+    border: solid 0.3rem transparent;
+    box-shadow: inset 0 0 1rem 1rem rgba(255, 255, 255, 0.5);
+  }
+}
+
+@mixin fade-in-animation() {
+  animation: fadein 0.25s;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin box-shadow-normal($color) {
+  box-shadow: 0 0 8px 0 $color;
+}
+
+@mixin box-shadow-large($color) {
+  box-shadow: 0 0 16px 0 $color;
+}
+
+@function color-with-opacity($color, $opacity) {
+  @return rgba($color, $opacity);
+}

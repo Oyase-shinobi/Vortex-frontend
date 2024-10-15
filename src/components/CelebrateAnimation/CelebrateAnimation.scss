@@ -1,0 +1,14 @@
+@import 'src/styles/config';
+
+.celebrate-animation {
+  width: 97rem;
+  height: 97rem;
+  object-fit: contain;
+}
+
+.window-small {
+  .celebrate-animation {
+    width: 100vw;
+    height: auto;
+  }
+}

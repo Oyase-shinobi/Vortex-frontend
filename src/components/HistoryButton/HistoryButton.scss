@@ -1,0 +1,32 @@
+@import 'src/styles/config';
+
+.history-button {
+  @include row;
+  color: $color-white01;
+  font-size: 2.6rem;
+  font-weight: $font-weight-bold;
+  gap: 1.2rem;
+  line-height: 3.4rem;
+  text-decoration: none;
+  margin-left: auto;
+
+  .history-icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 0 8.22px;
+  }
+}
+
+.window-small {
+  .history-button {
+    font-size: 1.4rem;
+    gap: 0.4rem;
+    line-height: 2rem;
+
+    .history-icon {
+      width: 2rem;
+      height: 2rem;
+      margin: 0;
+    }
+  }
+}

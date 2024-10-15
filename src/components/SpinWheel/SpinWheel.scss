@@ -1,0 +1,131 @@
+@import 'src/styles/config';
+
+.spin-wheel {
+  position: relative;
+  max-width: 60rem;
+  max-height: 66.6776rem;
+
+  .wheel {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .pointer {
+    position: absolute;
+    max-width: 6rem;
+    max-height: 7.5rem;
+    width: 8%;
+    height: auto;
+    object-fit: contain;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .center {
+    position: absolute;
+    max-width: 20rem;
+    max-height: 20rem;
+    object-fit: contain;
+    width: 33%;
+    height: auto;
+    top: 28.8%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .pie-chart {
+    position: absolute;
+    top: 7.8%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 50rem;
+    max-height: 50rem;
+    width: 83.16%;
+    height: auto;
+  }
+
+  .drawing-animation-container {
+    position: absolute;
+    top: 7.91%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 64.64%;
+    height: auto;
+  }
+
+  .player-entry-card-container {
+    position: absolute;
+    top: 0;
+    left: 60.7%;
+  }
+
+  .wheel-winner-container {
+    position: absolute;
+    top: 45.833%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.window-small {
+  .spin-wheel {
+    max-width: 60rem;
+    max-height: 66.6776rem;
+    min-width: 28rem;
+    min-height: 31.2rem;
+    width: 100%;
+    height: 100%;
+
+    .wheel {
+    }
+
+    .pointer {
+      max-width: 6rem;
+      max-height: 7.5rem;
+      min-width: 2.7723rem;
+      min-height: 3.5181rem;
+    }
+
+    .center {
+      max-width: 20rem;
+      max-height: 20rem;
+      min-width: 9.2409rem;
+      min-height: 9.3507rem;
+    }
+
+    .pie-chart {
+      max-width: 50rem;
+      max-height: 50rem;
+      min-width: 23.2871rem;
+      min-height: 23.4231rem;
+    }
+
+    .drawing-animation-container {
+      top: 7.91%;
+      max-width: 38.6rem;
+      max-height: 50.2rem;
+      min-width: 18.1rem;
+      min-height: 23.5573rem;
+      width: 64.64%;
+      height: auto;
+    }
+
+    .player-entry-card-container {
+      top: 0;
+      left: 60.7%;
+    }
+
+    .wheel-winner-container {
+      transform: translate(-50%, -50%);
+    }
+  }
+}

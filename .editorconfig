@@ -1,0 +1,38 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = false
+max_line_length = 80
+tab_width = 4
+
+[{*.js,*.ts}]
+indent_size = 2
+tab_width = 2
+
+[*.tsx]
+indent_size = 2
+tab_width = 2
+
+[*.scss]
+indent_size = 2
+tab_width = 2
+
+[*.md]
+indent_size = 2
+tab_width = 2
+
+[{*.bash,*.sh,*.zsh}]
+indent_size = 2
+tab_width = 2
+
+[{*.har,*.jsb2,*.jsb3,*.json,.babelrc,.eslintrc,.prettierrc,.stylelintrc,bowerrc,jest.config}]
+indent_size = 2
+tab_width = 2
+
+[{*.yaml,*.yml}]
+indent_size = 2
+tab_width = 2

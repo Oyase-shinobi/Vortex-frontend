@@ -1,0 +1,95 @@
+@import 'src/styles/config';
+
+.header {
+  @include row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: color-with-opacity($color-dark-blue01, 0.8);
+  width: 100vw;
+  min-height: 8rem;
+  padding: 2rem 6rem;
+  box-sizing: border-box;
+  z-index: 2;
+  backdrop-filter: blur(1rem);
+
+  .logo {
+    @include row;
+    gap: 1rem;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 4rem;
+
+    .logo-icon {
+      width: 4rem;
+      height: 4rem;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      @include font-play-bold;
+      color: $color-white;
+      font-size: 2.6rem;
+    }
+  }
+
+  .header-content {
+    @include row;
+    flex: 1;
+  }
+
+  .social-list {
+    @include row;
+    margin-left: auto;
+    align-items: center;
+    gap: 4rem;
+
+    .social-icon {
+      width: auto;
+      height: 2.4rem;
+      object-fit: contain;
+
+      .social-icon-normal {
+        display: initial;
+      }
+
+      .social-icon-hover {
+        display: none;
+      }
+
+      &:hover {
+        .social-icon-normal {
+          display: none;
+        }
+
+        .social-icon-hover {
+          display: initial;
+        }
+      }
+    }
+  }
+
+  .nav-list {
+    @include row;
+    align-items: center;
+    margin-left: 4rem;
+    gap: 2rem;
+    font-weight: $font-weight-bold;
+
+    .nav-item {
+      width: 8rem;
+      font-size: 2rem;
+      text-align: center;
+      text-decoration: none;
+      color: $color-white;
+
+      &:hover {
+        color: $color-blue01;
+      }
+    }
+  }
+
+  .connect-button-section {
+    margin-left: 6rem;
+  }
+}

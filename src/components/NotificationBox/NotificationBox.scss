@@ -1,0 +1,48 @@
+@import 'src/styles/config';
+
+.notification-box {
+  @include center-item;
+  min-width: 46rem;
+  max-width: 50vw;
+  height: 8rem;
+  font-size: 2.6rem;
+  font-weight: $font-weight-bold;
+  color: $color-black02;
+  background-color: $color-white01;
+  border: 4px solid $color-black02;
+  box-sizing: border-box;
+  padding: 0 3.2rem;
+  z-index: 10;
+  text-align: center;
+
+  position: fixed;
+  top: 12rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
+
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.window-small {
+  .notification-box {
+    border-width: 2px;
+    min-width: 26rem;
+    max-width: 80vw;
+    height: 4rem;
+    font-size: 1.4rem;
+
+    top: 6.6rem;
+  }
+}

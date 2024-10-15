@@ -1,0 +1,17 @@
+@import 'src/styles/config';
+
+.date-cell {
+  font-size: 2rem;
+  font-weight: $font-weight-bold;
+  line-height: 2.8rem;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.window-small {
+  .date-cell {
+    min-width: 8rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+}

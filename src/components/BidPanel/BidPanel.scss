@@ -1,0 +1,221 @@
+@import 'src/styles/config';
+
+.bid-panel {
+  @include box-shadow-normal($color-green01);
+  @include column;
+  max-width: 75.2rem;
+  width: 100%;
+  height: 48.4rem;
+  box-sizing: border-box;
+  border-radius: $border-radius-default;
+  background: $color-black02;
+  padding: 4rem 3.6rem;
+  color: $color-white01;
+  gap: 1.2rem;
+
+  .title {
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+    line-height: 2.6rem;
+  }
+
+  .bid-input {
+    @include font-play;
+    @include outline-none;
+    background: $color-black01;
+    height: 5.3rem;
+    font-size: 3.2rem;
+    color: $color-white01;
+    border: 0;
+    padding: 0 1.6rem;
+  }
+
+  .quick-select-row {
+    @include row;
+    gap: 2rem;
+    margin-top: 0.4rem;
+  }
+
+  .bid-round-container {
+    @include row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+
+    .round-container {
+      @include column;
+      gap: 1.2rem;
+      margin-top: 2.8rem;
+      margin-bottom: 0.2rem;
+
+      .round-selector-section {
+        @include row;
+        align-items: center;
+        gap: 1.2rem;
+
+        .round-selector {
+          @include row;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 2rem;
+          min-width: 18rem;
+          height: 6rem;
+          box-sizing: border-box;
+          border-radius: $border-radius-default;
+          border: 2px solid $color-green01;
+          font-weight: $font-weight-bold;
+          font-size: 2.6rem;
+
+          .round-number {
+            @include font-play;
+            @include outline-none;
+            width: 6rem;
+            height: 2.6rem;
+            font-size: 3.2rem;
+            font-weight: $font-weight-normal;
+            text-align: center;
+            background: transparent;
+            color: $color-white01;
+            border: 0;
+          }
+        }
+
+        .max-button {
+          font-size: 2rem;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+
+    .total-entry-container {
+      @include column;
+      align-items: flex-end;
+      gap: 1.2rem;
+      font-size: 2rem;
+      font-weight: $font-weight-bold;
+      text-align: right;
+      flex: 1;
+      max-width: 42rem;
+      word-break: break-word;
+    }
+  }
+
+  .action-buttons {
+    @include row;
+    gap: 4rem;
+    margin-top: auto;
+
+    .back-button {
+      @include button($color-black01);
+      height: 6rem;
+      flex: 1;
+    }
+
+    .add-button {
+      @include button($color-green01);
+      height: 6rem;
+      flex: 1;
+      color: $color-black02;
+
+      &:hover {
+        color: $color-black02;
+      }
+
+      &.disabled {
+        background: $color-black01;
+        box-shadow: none;
+        color: color-with-opacity($color-white, 0.3);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.window-small {
+  .bid-panel {
+    width: 100%;
+    max-width: initial;
+    height: 38.6rem;
+    border-radius: $border-radius-small;
+    padding: 2rem;
+    gap: 0.8rem;
+
+    .title {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .bid-input {
+      height: 3.6rem;
+      font-size: 2rem;
+      padding: 0 0.8rem;
+    }
+
+    .quick-select-row {
+      @include row;
+      gap: 2rem;
+      margin-top: 0.8rem;
+    }
+
+    .bid-round-container {
+      @include column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 3.6rem;
+
+      .round-container {
+        gap: 0.8rem;
+        margin-top: 1.6rem;
+
+        .round-selector-section {
+          gap: 1.6rem;
+
+          .round-selector {
+            padding: 0 0.8rem;
+            max-width: 12rem;
+            min-width: 12rem;
+            height: 4rem;
+            border-width: 1px;
+            font-size: 1.4rem;
+
+            .round-number {
+              height: 2.6rem;
+              font-size: 2rem;
+            }
+
+            .round-action-button {
+              @include center-item;
+              width: 2rem;
+              height: 2.6rem;
+            }
+          }
+
+          .max-button {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      .total-entry-container {
+        gap: 1.6rem;
+        font-size: 1.4rem;
+        max-width: initial;
+        align-self: flex-end;
+      }
+    }
+
+    .action-buttons {
+      margin-top: auto;
+
+      .back-button {
+        display: none;
+      }
+
+      .add-button {
+        height: 3.6rem;
+        border-radius: $border-radius-small;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

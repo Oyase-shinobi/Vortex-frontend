@@ -1,0 +1,32 @@
+@import 'src/styles/config';
+
+.table-tab {
+  @include center-item;
+  width: 24rem;
+  height: 4.8rem;
+  border-radius: $border-radius-default $border-radius-default 0 0;
+  background: $color-black02;
+  color: color-with-opacity($color-white01, 0.3);
+  font-size: 2rem;
+  font-weight: $font-weight-bold;
+  box-sizing: border-box;
+
+  &.active {
+    color: $color-white;
+    border-bottom: 4px solid $color-blue01;
+  }
+}
+
+.window-small {
+  .table-tab {
+    @include center-item;
+    width: 16rem;
+    height: 3.2rem;
+    font-size: 1.4rem;
+
+    &.active {
+      color: $color-white;
+      border-bottom: 4px solid $color-blue01;
+    }
+  }
+}

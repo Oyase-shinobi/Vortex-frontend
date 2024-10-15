@@ -1,0 +1,47 @@
+@import 'src/styles/config';
+
+.quick-entry-selection {
+  @include box-shadow-normal($color-blue01);
+  @include row;
+  align-items: center;
+  gap: 0.8rem;
+  width: fit-content;
+  height: 4.6rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: $border-radius-default;
+  background-color: $color-black01;
+  box-sizing: border-box;
+
+  .tt-icon {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+  }
+
+  .entry-amount {
+    color: $color-white01;
+    font-size: 2.4rem;
+  }
+
+  &:hover {
+    @include box-shadow-normal($color-blue02);
+  }
+}
+
+.window-small {
+  .quick-entry-selection {
+    gap: 0.2rem;
+    height: 3rem;
+    padding: 0.7rem 0.4rem;
+    border-radius: $border-radius-small;
+
+    .tt-icon {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    .entry-amount {
+      font-size: 1.6rem;
+    }
+  }
+}

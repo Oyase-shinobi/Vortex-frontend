@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  spin-game-aptos-frontend:
+    container_name: spin-game-aptos-frontend
+    image: brighter/spin-game-aptos-frontend:${PHASE:-sit}
+    build:
+      context: ../.
+      dockerfile: deploy/Dockerfile
+    restart: always
+    ports:
+      - '8889:3000'
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: 10m
+        max-file: '5'

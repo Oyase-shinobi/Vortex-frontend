@@ -1,0 +1,74 @@
+@import 'src/styles/config';
+
+.player-entry-card {
+  @include box-shadow-large($color-black02);
+  @include column;
+  align-items: center;
+  width: 26rem;
+  height: 12.6rem;
+  border-radius: $border-radius-default;
+  background-color: $color-black02;
+  overflow: hidden;
+  color: $color-white01;
+  line-height: 1;
+
+  .color-bar {
+    width: 100%;
+    height: 1rem;
+  }
+
+  .percentage {
+    margin-top: 1.6rem;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: $font-weight-bold;
+  }
+
+  .player-total-entry {
+    @include row;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 1.2rem 0 1.6rem;
+
+    .tt-icon {
+      width: 3rem;
+      height: 3rem;
+      object-fit: contain;
+    }
+
+    .entry-amount {
+      font-size: 3.2rem;
+    }
+  }
+}
+
+.window-small {
+  .player-entry-card {
+    width: 14rem;
+    height: 6rem;
+    border-radius: $border-radius-small;
+
+    .color-bar {
+      height: 0.6rem;
+    }
+
+    .percentage {
+      margin-top: 0.4rem;
+      font-size: 2rem;
+    }
+
+    .player-total-entry {
+      gap: 0.2rem;
+      margin: 0.4rem 0 0.8rem;
+
+      .tt-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+
+      .entry-amount {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

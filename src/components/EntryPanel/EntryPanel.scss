@@ -1,0 +1,348 @@
+@import 'src/styles/config';
+
+.entry-panel {
+  @include column;
+  @include box-shadow-large($color-blue01);
+  max-width: 75.2rem;
+  width: 100%;
+  height: fit-content;
+  background: $color-black02;
+  border-radius: $border-radius-default;
+  box-sizing: border-box;
+
+  .countdown-prize-player-section {
+    @include row;
+    gap: 2.4rem;
+    align-items: center;
+    padding: 2.6rem 3.2rem 2rem 2rem;
+
+    .prize-pool {
+      @include column;
+      gap: 0.8rem;
+      color: $color-white01;
+
+      .section-title {
+        line-height: 1;
+        font-size: 2rem;
+        font-weight: $font-weight-bold;
+      }
+
+      .section-content {
+        @include row;
+        align-items: center;
+        gap: 0.8rem;
+        line-height: 1;
+        font-size: 3.2rem;
+        font-weight: $font-weight-normal;
+
+        .tt-icon {
+          width: 3rem;
+          height: 3rem;
+          object-fit: contain;
+        }
+      }
+    }
+
+    .player-count {
+      @include column;
+      gap: 0.8rem;
+      color: $color-white01;
+      margin-left: auto;
+
+      .section-title {
+        line-height: 1;
+        font-size: 2rem;
+        font-weight: $font-weight-bold;
+      }
+
+      .section-content {
+        line-height: 1;
+        font-size: 3.2rem;
+        font-weight: $font-weight-normal;
+      }
+    }
+  }
+
+  .entry-section {
+    @include column;
+    padding: 0 3.2rem 3.2rem;
+    gap: 2.8rem;
+
+    .entry-info-section {
+      @include column;
+      max-width: 68.8rem;
+      width: 100%;
+      min-height: 21.8rem;
+      height: fit-content;
+      border-radius: $border-radius-default;
+      border: 4px solid color-with-opacity($color-white, 0.3);
+      gap: 3.6rem;
+      overflow: hidden;
+
+      .color-bar {
+        width: 100%;
+        min-height: 2.2rem;
+      }
+
+      .current-entry {
+        @include row;
+        padding: 0 4rem;
+        margin-top: 2.8rem;
+
+        .win-chance {
+          @include column;
+          gap: 1.2rem;
+          flex: 1;
+
+          .section-title {
+            line-height: 1;
+            color: $color-white01;
+            font-size: 2rem;
+            font-weight: $font-weight-bold;
+          }
+
+          .section-content {
+            line-height: 1;
+            font-size: 4rem;
+            font-weight: $font-weight-bold;
+            color: color-with-opacity($color-white, 0.3);
+          }
+        }
+
+        .your-entries {
+          @include column;
+          gap: 1.2rem;
+          flex: 1;
+
+          .section-title {
+            line-height: 1;
+            color: $color-white01;
+            font-size: 2rem;
+            font-weight: $font-weight-bold;
+          }
+
+          .section-content {
+            @include row;
+            align-items: center;
+            gap: 0.8rem;
+            line-height: 1;
+            font-size: 3.2rem;
+            font-weight: $font-weight-normal;
+            color: color-with-opacity($color-white, 0.3);
+
+            .tt-icon {
+              width: 3rem;
+              height: 3rem;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+
+      .future-entry {
+        @include row;
+        padding: 0 4rem;
+        margin-bottom: 2.4rem;
+
+        .section-column {
+          @include column;
+          gap: 0.6rem;
+          flex: 1;
+
+          .section-title {
+            line-height: 1;
+            color: $color-white01;
+            font-size: 2rem;
+            font-weight: $font-weight-bold;
+          }
+
+          .section-content {
+            line-height: 1;
+            font-size: 2.4rem;
+            font-weight: $font-weight-normal;
+            color: color-with-opacity($color-white, 0.3);
+          }
+        }
+      }
+
+      &.my-entry {
+        gap: 2.3rem;
+
+        .current-entry {
+          margin-top: 0;
+
+          .win-chance,
+          .your-entries {
+            .section-content {
+              color: $color-white01;
+            }
+          }
+        }
+
+        .future-entry {
+          .section-column {
+            .section-content {
+              color: $color-white01;
+            }
+          }
+        }
+      }
+    }
+
+    .action-button {
+      @include button($color-blue01);
+      @include box-shadow-large($color-blue01);
+      width: 100%;
+      height: 6rem;
+
+      &.disabled {
+        background: $color-black01;
+        box-shadow: none;
+        color: color-with-opacity($color-white, 0.3);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.window-small {
+  .entry-panel {
+    @include box-shadow-normal($color-blue01);
+    width: auto;
+    max-width: initial;
+    border-radius: $border-radius-small;
+
+    &.fixed {
+      position: fixed;
+      bottom: 1.2rem;
+      width: calc(100% - 3.2rem);
+    }
+
+    .countdown-prize-player-section {
+      gap: 1.2rem;
+      padding: 1.2rem 1.2rem 1rem;
+
+      .prize-pool {
+        gap: 0.4rem;
+
+        .section-title {
+          font-size: 1.4rem;
+        }
+
+        .section-content {
+          gap: 0;
+          font-size: 1.6rem;
+
+          .tt-icon {
+            display: none;
+          }
+        }
+      }
+
+      .player-count {
+        @include column;
+        gap: 0.8rem;
+        color: $color-white01;
+        margin-left: auto;
+
+        .section-title {
+          font-size: 1.4rem;
+        }
+
+        .section-content {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .entry-section {
+      padding: 0 1.2rem 1rem;
+      gap: 0.8rem;
+
+      .entry-info-section {
+        //min-width: 32.6rem;
+        width: 100%;
+        max-width: initial;
+        min-height: 8.6rem;
+        height: fit-content;
+        border-radius: $border-radius-small;
+        border-width: 1px;
+        gap: 1rem;
+
+        .color-bar {
+          min-height: 0.8rem;
+        }
+
+        .current-entry {
+          padding: 1.2rem 2rem 0;
+          margin-top: 0;
+
+          .win-chance {
+            gap: 0.6rem;
+
+            .section-title {
+              font-size: 1.4rem;
+            }
+
+            .section-content {
+              font-size: 2rem;
+            }
+          }
+
+          .your-entries {
+            gap: 0.6rem;
+
+            .section-title {
+              font-size: 1.4rem;
+            }
+
+            .section-content {
+              gap: 0.4rem;
+              font-size: 1.6rem;
+
+              .tt-icon {
+                width: 1.6rem;
+                height: 1.6rem;
+              }
+            }
+          }
+        }
+
+        .future-entry {
+          padding: 0 2rem;
+          margin-bottom: 1.2rem;
+
+          .section-column {
+            @include row;
+            gap: 0.2rem;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .section-title {
+              font-size: 1.2rem;
+            }
+
+            .section-content {
+              font-size: 1.2rem;
+              font-weight: $font-weight-bold;
+            }
+          }
+        }
+
+        &.my-entry {
+          gap: 0.8rem;
+
+          .current-entry {
+            padding: 0 2rem;
+          }
+        }
+      }
+
+      .action-button {
+        height: 3.6rem;
+        border-radius: $border-radius-small;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
