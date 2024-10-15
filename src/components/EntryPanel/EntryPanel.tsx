@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useWallet } from '@aptos-labs/wallet-adapter-react';
+import { WalletSelector } from '@aptos-labs/wallet-adapter-ant-design';
 
 import ButtonDiv from '@/lib/ButtonDiv/ButtonDiv';
 import Countdown from '@/components/Countdown/Countdown';
@@ -23,9 +24,10 @@ import './EntryPanel.scss';
 
 const EntryPanel = () => {
   const dispatch = useDispatch();
-  const { connected, account, connect } = useWallet();
+  const { connected, account } = useWallet();
   const { isWindowSmall } = useWindowSize();
 
+  const [isOpenWalletModal, setIsOpenWalletModal] = useState(false);
   const [futureEntryCount, setFutureEntryCount] = useState(0);
   const [futureEntryTotal, setFutureEntryTotal] = useState('0');
 
@@ -64,6 +66,7 @@ const EntryPanel = () => {
       setFutureEntryCount(0);
       setFutureEntryTotal('0');
     }
+    setIsOpenWalletModal(false);
   }, [connected]);
 
   const prizePoolString = StringHelper.numberWithComma(prizePool);
@@ -85,8 +88,21 @@ const EntryPanel = () => {
   const actionButton = useMemo(() => {
     if (!connected) {
       return (
-        <ButtonDiv className="action-button" onClick={() => connect}>
+        <ButtonDiv
+          className="action-button"
+          onClick={() => {
+            if (!isOpenWalletModal) {
+              setIsOpenWalletModal(true);
+            }
+          }}
+        >
           {'Connect Wallet'}
+          <div style={{ display: 'none' }}>
+            <WalletSelector
+              isModalOpen={isOpenWalletModal}
+              setModalOpen={setIsOpenWalletModal}
+            />
+          </div>
         </ButtonDiv>
       );
     }
@@ -113,7 +129,7 @@ const EntryPanel = () => {
         {'Enter'}
       </ButtonDiv>
     );
-  }, [gameMode, gameState, connected, isWindowSmall]);
+  }, [gameMode, gameState, connected, isWindowSmall, isOpenWalletModal]);
 
   const myEntryClassname = myEntry === null ? '' : 'my-entry';
 
