@@ -42,7 +42,7 @@ const WheelWinner = () => {
   const winMultiplier = (prizePool / Number(winEntry.entry)).toFixed(2);
 
   return (
-    <div className="wheel-winner" style={{ zoom: `${zoom}%` }}>
+    <div className="wheel-winner" style={{ transform: `scale(${zoom/100})` }}>
       <div className="winner-icon">
         <GhostSvg color={ColorHelper(colors, index)} isMax={true} />
       </div>
