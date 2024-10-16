@@ -44,7 +44,7 @@ const WheelWinner = () => {
   return (
     <div className="wheel-winner" style={{ zoom: `${zoom}%` }}>
       <div className="winner-icon">
-        <GhostSvg color={ColorHelper(colors, index)} isLarge={true} />
+        <GhostSvg color={ColorHelper(colors, index)} isMax={true} />
       </div>
       <div className="winner-title">{'Winner'}</div>
       <div className="winner-address">
