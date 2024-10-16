@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 
 export interface UserStateType {
-  balance: BigInt;
+  balance: bigint;
 }
 
 const userSliceDefaultState: UserStateType = {
