@@ -1,8 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useWallet } from '@aptos-labs/wallet-adapter-react';
 import { WalletSelector } from '@aptos-labs/wallet-adapter-ant-design';
+import { useDispatch, useSelector } from 'react-redux';
 
 import ButtonDiv from '@/lib/ButtonDiv/ButtonDiv';
+
+import { RootState } from '@/store/store';
+import { resetBalance, setBalance } from '@/store/user/slice';
 
 import AptosIndexer from '@/utils/helpers/AptosIndexer';
 import Media from '@/utils/constants/Media';
@@ -13,11 +17,13 @@ import useClickOutside from '@/utils/hooks/useClickOutside';
 import './ConnectButtonModule.scss';
 
 const ConnectButton = () => {
+  const dispatch = useDispatch();
+
   const { connected, disconnect, account } = useWallet();
   const { isOpen, ref, setIsOpen } = useClickOutside(false);
+  const { balance } = useSelector((state: RootState) => state.userSlice.user);
 
   const [isOpenWalletModal, setIsOpenWalletModal] = useState(false);
-  const [balance, setBalance] = useState(BigInt(0));
 
   let refreshBalanceInterval: NodeJS.Timeout | null = null;
 
@@ -36,6 +42,7 @@ const ConnectButton = () => {
       if (refreshBalanceInterval) {
         clearInterval(refreshBalanceInterval);
       }
+      dispatch(resetBalance());
     }
   }, [connected, account]);
 
@@ -43,7 +50,7 @@ const ConnectButton = () => {
     if (account === null || account.address === null) return 0;
     try {
       const result = await AptosIndexer.getAptBalance(account.address);
-      setBalance(BigInt(result));
+      dispatch(setBalance(BigInt(result)));
     } catch (error) {
       console.error(error);
     }

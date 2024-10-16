@@ -31,6 +31,7 @@ import './BidPanel.scss';
 const BidPanel = () => {
   const dispatch = useDispatch();
   const { openModal } = useContext(ModalContext);
+  const { balance } = useSelector((state: RootState) => state.userSlice.user);
   const { gameState, userEntry, userRound } = useSelector(
     (state: RootState) => state.gameSlice.game,
   );
@@ -45,7 +46,6 @@ const BidPanel = () => {
     false,
   );
 
-  const [balance, setBalance] = useState(BigInt(0));
   const [entryAmount, setEntryAmount] = useState<number | string>(
     userEntry ?? '',
   );

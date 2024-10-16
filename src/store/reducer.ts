@@ -5,6 +5,7 @@ import gameSlice from './game/slice';
 import i18nSlice from './i18n/slice';
 import loadingSlice from './loading/slice';
 import notificationSlice from './notification/slice';
+import userSlice from './user/slice';
 
 const RootReducer = combineReducers({
   coinPriceSlice,
@@ -12,6 +13,7 @@ const RootReducer = combineReducers({
   i18nSlice,
   loadingSlice,
   notificationSlice,
+  userSlice,
 });
 
 export default RootReducer;
