@@ -11,3 +11,4 @@ const aptos = new Aptos(config);
 ```
 
 The usage of Nodit Indexer can be found at: `src/utils/helpers/AptosIndexer.ts` and `src/components/ConnectButtonModule/ConnectButtonModule.tsx`.
+
